@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Jazmine</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="div1">
+    <h1>Feliz cumpleaños Jazmine!! (Te quiero demasiado! ❤😘)</h1>
+    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a4d19890287115.5e139f5047d55.gif" alt="birthday">
+    <p class="para1">💕💕💞Te deseo un excelente día! Mucha suerte en tu camino,🍫🍫🎊🎉Que cumplas muchos años más,💕💞🎇🎆 Que tengas un cumpleaños hermoso y que se te cumplan todos tus deseos!!😍💕💕💞🎈🎈🎁😍🎆</p>
+    <button onclick="nextPage()" class="btn1">Haz Click</button>
+  </div>
+  <div class="div2">
+
+    <section class="img">
+      <img src="https://media.giphy.com/media/RlZouK6QqVVHNIxp6I/giphy.gif">
+    </section>
+    <p id="text"></p>
+  </div>
+  <audio id="music" loop src="https://dl.prokerala.com/downloads/ringtones/files/mp3/original-happy-birthday-song-1-48291.mp3" id="music"></audio>
+
+  <!-- script -->
+  <script>
+    let music = document.getElementById("music")
+    let wishes =
+      "Mi querida Jazmine❣❣ Te deseo mucho amor, salud y felicidad en abundancia en este cumpleaños🍫😊💕💞🎇🎆🎈🎁🎁. Para mi, eres la mujer más hermosa y lista que he conocido! Me gustas y lo sabes!😍. Y aprovecho esta oportunidad para decirte que... Te deseo lo mejor de este mundo, y hoy es un día sumamente especial, porque es el día que nació la persona más importante para mí y la que más quiero... Jazmine, te elegí porque eres la persona que me hace feliz, eres la persona que tengo en mente siempre. Por la cual me arriesgué a decirle todo lo que sentía y no me importó nada de nada. Eres tú la persona que me deja pensando cosas durante todo el día, siempre me pregunto durante todo el día, que estarás haciendo, cómo estarás, etc... Eres tú la persona por la que me muero por estar y por la que esperaré lo que sea necesario para hacerlo. No me importa nada, no te cambiaría por nada, ni por nadie!.💕💕💞🎇🎆🎆🎆 En fin... Feliz cumpleaños Jazmine!!!.🎊🎉🎆🎆🎈🎈🎁 TE QUIERO MUCHO MUCHO!!! ❤❤😘😘";
+    let text = document.getElementById("text");
+    let i = 0;
+    window.addEventListener("click", function() {
+      if (music.pause) {
+        music.play()
+      }
+    })
+
+    function addText() {
+      if (i < wishes.length) {
+        text.innerHTML += wishes.charAt(i)
+        i++;
+        setTimeout(addText, 100)
+      }
+    }
+    addText()
+
+    function nextPage() {
+      document.querySelector(".div1").style.display = "none";
+      document.querySelector(".div2").style.display = "block";
+    }
+  </script>
+</body>
+
+</html>
